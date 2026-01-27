@@ -22,8 +22,6 @@ The S1,1 results demonstrate:
 * A significant resonance peak observed at approximately 48.7 GHz with a return loss better than -20 dB.
 * Broadband characteristics suitable for 5G and radar applications.
 
-![3D Model](media/3d_model.jpg)
-![S-Parameter Plot](media/s_parameter_plot.jpg)
 
 ## Repository Structure
 * `vivaldiantenna.cst`: The main project file (CST Studio Suite 2025).
