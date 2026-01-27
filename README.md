@@ -1,36 +1,36 @@
 # 30-60 GHz Wideband Vivaldi Antenna Design
 
-This repository contains the design, modeling, and simulation results of a wideband Vivaldi antenna, developed using **CST Studio Suite 2025**. [cite_start]The design is optimized for mmWave (millimeter-wave) frequency bands, specifically targeting high-performance communication systems. [cite: 81]
+This repository contains the design, modeling, and simulation results of a wideband Vivaldi antenna, developed using CST Studio Suite 2025. The design is optimized for mmWave (millimeter-wave) frequency bands, specifically targeting high-performance communication systems.
 
 ## Technical Overview
-[cite_start]The antenna is designed on a substrate with a dielectric constant of **4.1** and a thickness of **0.2 mm**. [cite: 1, 6] [cite_start]The design utilizes exponential tapering to achieve wideband impedance matching across the 30-60 GHz spectrum. [cite: 1, 15]
+The antenna is designed on a substrate with a dielectric constant of 4.1 and a thickness of 0.2 mm. The design utilizes exponential tapering to achieve wideband impedance matching across the 30-60 GHz spectrum.
 
-### Key Parameters (Parameter List)
-[cite_start]The design is fully parameterized to allow for easy optimization: [cite: 1, 80]
-* [cite_start]**subw (Substrate Width):** 3 mm [cite: 1]
-* [cite_start]**sL (Slot Length):** 1 mm [cite: 1]
-* [cite_start]**h (Substrate Thickness):** 0.2 mm [cite: 1]
-* [cite_start]**k (Dielectric Constant):** 4.1 [cite: 1]
-* [cite_start]**Frequency Range:** 30 GHz to 60 GHz [cite: 15]
+### Key Parameters
+The design is fully parameterized to allow for easy optimization:
+* **subw (Substrate Width):** 3 mm
+* **sL (Slot Length):** 1 mm
+* **h (Substrate Thickness):** 0.2 mm
+* **k (Dielectric Constant):** 4.1
+* **Frequency Range:** 30 GHz to 60 GHz
 
 ## Simulation Results
-[cite_start]The simulation was performed using the **Transient Solver** in CST Studio Suite. [cite: 1]
+The simulation was performed using the Transient Solver in CST Studio Suite.
 
 ### S-Parameters (Return Loss)
-[cite_start]The $S_{1,1}$ results demonstrate: [cite: 15]
-* [cite_start]Strong impedance matching (below -10 dB) across the primary operating band. [cite: 15]
-* [cite_start]A significant resonance peak observed at approximately **48.7 GHz** with a return loss better than -20 dB. [cite: 15]
-* [cite_start]Broadband characteristics suitable for 5G and radar applications. [cite: 15]
+The S1,1 results demonstrate:
+* Strong impedance matching (below -10 dB) across the primary operating band.
+* A significant resonance peak observed at approximately 48.7 GHz with a return loss better than -20 dB.
+* Broadband characteristics suitable for 5G and radar applications.
 
-*(Note: You can insert your screenshots here using the following syntax after uploading them to the 'media' folder)*
-![S-Parameter Plot](media/s_parameter_plot.png)
+![3D Model](media/3d_model.jpg)
+![S-Parameter Plot](media/s_parameter_plot.jpg)
 
 ## Repository Structure
-* [cite_start]`vivaldiantenna.cst`: The main project file (CST Studio Suite 2025). [cite: 81]
+* `vivaldiantenna.cst`: The main project file (CST Studio Suite 2025).
 * `/media`: Contains screenshots of the 3D model and S-parameter plots.
-* [cite_start]`.gitignore`: Configured to exclude heavy simulation data (ModelCache, Result folders). [cite: 80]
+* `.gitignore`: Configured to exclude heavy simulation data (ModelCache, Result folders).
 
 ## How to Run
 1. Clone the repository.
-2. [cite_start]Open `vivaldiantenna.cst` with **CST Studio Suite 2025** or later. [cite: 81]
-3. [cite_start]Run the **Transient Solver** to recalculate the results if necessary. [cite: 1]
+2. Open `vivaldiantenna.cst` with CST Studio Suite 2025 or later.
+3. Run the Transient Solver to recalculate the results if necessary.
