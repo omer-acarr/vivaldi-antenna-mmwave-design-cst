@@ -1,9 +1,9 @@
-# 30-60 GHz Ultra-Wideband Vivaldi Antenna Design
+# 30-60 GHz Ultra-Wideband Vivaldi Antenna: From Simulation to PCB Manufacturing
 
-This repository contains the design and simulation files for an ultra-wideband (UWB) Vivaldi antenna, developed using **CST Studio Suite 2025**. The antenna is specifically optimized for millimeter-wave (mmWave) applications, covering the 30-60 GHz frequency range.
+This repository contains the full design cycle of an ultra-wideband (UWB) Vivaldi antenna, covering **CST Studio Suite 2025** simulations and **Altium Designer** PCB layout/manufacturing files. The design is optimized for millimeter-wave (mmWave) applications, specifically targeting the Ka and V bands.
 
 ## 🚀 Project Overview
-Vivaldi antennas (Tapered Slot Antennas) are known for their high gain and stable radiation patterns over a very wide bandwidth. This project focuses on a microstrip-fed Vivaldi structure designed on a high-frequency substrate to achieve high efficiency in the Ka and V bands.
+Vivaldi antennas (Tapered Slot Antennas) are known for their high gain and stable radiation patterns. This project bridges the gap between electromagnetic simulation and physical realization by providing production-ready Gerber files on specialized high-frequency substrates.
 
 ### Technical Specifications
 * **Frequency Range:** 30 GHz - 60 GHz
@@ -11,26 +11,33 @@ Vivaldi antennas (Tapered Slot Antennas) are known for their high gain and stabl
     * **Permittivity ($\epsilon_r$):** 6.15
     * **Loss Tangent ($\tan \delta$):** 0.0028
     * **Thickness:** 0.2 mm
-* **Feed Mechanism:** Microstrip line transition to exponential taper.
-* **Mesh Count:** ~13,440 cells (Optimized for accuracy/speed).
+* **Feed Mechanism:** Microstrip line transition to an exponential taper.
 
-## 📊 Simulation Results
+---
 
-### S-Parameters ($S_{11}$)
-The antenna shows excellent impedance matching, particularly in the lower end of the band (30-34 GHz) with $S_{11}$ levels dropping below -40 dB, and a resonance point near 48 GHz.
+## 📊 Phase 1: Simulation (CST Studio Suite)
+The antenna geometry was parameterized and optimized for maximum bandwidth and impedance matching.
+
+* **S-Parameters ($S_{11}$):** Achieved excellent matching below -10 dB across the entire 30-60 GHz band, with resonance points near 32 GHz and 48 GHz.
+* **Mesh Optimization:** Configured with ~13,440 cells to balance simulation accuracy and computational speed.
+
+---
+
+## 🛠 Phase 2: PCB Layout & Manufacturing (Altium Designer)
+The CST model was exported via DXF and reconstructed in Altium Designer to ensure a production-ready design.
+
+### Key Layout Features
+* **Dual-Layer Structure:**
+    * **Top Layer:** 0.25 mm microstrip feed line with a dedicated 0.3mm x 0.5mm soldering pad for mmWave connectors.
+    * **Bottom Layer:** Exponentially tapered Vivaldi wings acting as the ground plane and radiator.
+* **Precision Alignment:** The microstrip-to-slotline transition was cross-verified in 3D to ensure perfect electromagnetic coupling at 60 GHz.
+* **Board Shape:** Optimized 12mm x 9mm form factor defined on the Mechanical layer for precise CNC routing.
 
 
-### Design Geometry
-The exponential taper was carefully parameterized to ensure a smooth impedance transition from the microstrip feed to free space.
 
-
-## 🛠 Features
-* **Parametric Design:** All dimensions (length, width, slot rate) are defined as variables for easy optimization.
-* **High-Frequency Performance:** Specialized substrate selection for minimal dielectric loss at mmWave frequencies.
-* **Ready-to-Simulate:** CST project file included with pre-configured solver settings and field monitors.
-
-
-
-
-
+### Manufacturing Package
+The repository includes a complete production folder containing:
+* **Gerber Files (RS-274X):** Top/Bottom copper, Solder Mask, and Board Outline.
+* **NC Drill Files:** Precise board cutout coordinates.
+* **Fabrication Notes:** Specifications for **Taconic RF-60A**, **0.2 mm thickness**, and **ENIG (Immersion Gold)** surface finish.
 
